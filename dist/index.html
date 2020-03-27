@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Savarankiška JS užduotis</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body class="bg-light">
+    <!-- Užduoties aprašymas yra pateiktas script.js faile, kuris yra js aplanke -->
+    <div class="container bg-white pr-5 pl-5">
+      <h1>Explore last 20 years of NBA seasons data</h1>
+      <div class="row pt-5">
+        <div class="col-6">
+          <select class="custom-select" id="yearSelector">
+            <option value="" selected>All seasons</option>
+          </select>
+        </div>
+        <div class="col-6">
+          <button type="button" class="btn btn-info" data-details="champion">
+            Champion
+          </button>
+          <button type="button" class="btn btn-info" data-details="runnerUp">
+            Runner Up
+          </button>
+          <button type="button" class="btn btn-info" data-details="finalsMVP">
+            Finals MVP
+          </button>
+          <button type="button" class="btn btn-info" data-details="mvp">
+            MVP
+          </button>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            id="btn-clear"
+            disabled
+          >
+            All
+          </button>
+        </div>
+      </div>
+      <h1 id="title" class="mt-4">Title placeholder</h1>
+      <div id="pageContent"></div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

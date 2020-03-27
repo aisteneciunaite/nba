@@ -1,0 +1,82 @@
+{
+  "Shaquille O'Neal": {
+    "PlayerID": 406,
+    "bio": "Shaquille Rashaun \"Shaq\" O'Neal is a retired professional American basketball player who is a sports analyst on the television program. Inside the NBA on TNT. He is considered one of the greatest players in National Basketball Association history."
+  },
+  "Allen Iverson": {
+    "PlayerID": 947,
+    "bio": "Allen Ezail Iverson, nicknamed \"the Answer\", is an American former professional basketball player. He played 14 seasons in the National Basketball Association at both the shooting guard and point guard positions"
+  },
+  "Tim Duncan": {
+    "PlayerID": 1495,
+    "bio": "Timothy Theodore Duncan is an American professional basketball coach and former player who is an assistant coach for the San Antonio Spurs of the National Basketball Association. He spent his entire 19-year playing career with the Spurs."
+  },
+  "Chauncey Billups": {
+    "PlayerID": 1497,
+    "bio": "Chauncey Ray Billups is an American former professional basketball player. He played 17 seasons in the National Basketball Association. After playing college basketball with the Colorado Buffaloes, he was selected third overall in the 1997 NBA draft by the Boston Celtics."
+  },
+  "Kevin Garnett": {
+    "PlayerID": 708,
+    "bio": "Kevin Maurice Garnett is an American former professional basketball player who played for 21 seasons in the National Basketball Association. Known for his intensity, defensive ability, and versatility, Garnett is considered one of the greatest power forwards of all time."
+  },
+  "Steve Nash": {
+    "PlayerID": 959,
+    "bio": "Stephen John Nash OC OBC is a Canadian former professional basketball player who played 18 seasons in the National Basketball Association. He was an eight-time NBA All-Star and a seven-time All-NBA selection. Twice, Nash was named the NBA Most Valuable Player while playing for the Phoenix Suns."
+  },
+  "Dwyane Wade": {
+    "PlayerID": 2548,
+    "bio": "Dwyane Tyrone Wade Jr. is an American former professional basketball player. Wade spent the majority of his 16-year career playing for the Miami Heat in the National Basketball Association."
+  },
+  "Tony Parker": {
+    "PlayerID": 2225,
+    "bio": "William Anthony Parker Jr. is a French-American former professional basketball player and majority owner of ASVEL Basket in LNB Pro A. The son of a professional basketball player, Parker played for two years for Paris Basket Racing in the French basketball league, before joining the San Antonio Spurs of the National Basketball Association (NBA)"
+  },
+  "Dirk Nowitzki": {
+    "PlayerID": 1717,
+    "bio": "Dirk Werner Nowitzki is a German retired professional basketball player. An alumnus of the DJK Würzburg basketball club, Nowitzki was chosen as the ninth pick in the 1998 NBA draft by the Milwaukee Bucks and was immediately traded to the Dallas Mavericks, where he played his entire 21-year National Basketball Association (NBA) career."
+  },
+  "Paul Pierce": {
+    "PlayerID": 1718,
+    "bio": "Paul Anthony Pierce is an American former professional basketball player who played 19 seasons in the National Basketball Association. He is currently an analyst on ESPN's NBA Countdown. Pierce was a high school McDonald's All-American and earned consensus first-team All-America honors in his junior year at Kansas."
+  },
+  "Kobe Bryant": {
+    "PlayerID": 977,
+    "bio": "Kobe Bean Bryant was an American professional basketball player. As a shooting guard, Bryant entered the National Basketball Association directly from high school, and played his entire 20-season professional career in the league with the Los Angeles Lakers."
+  },
+  "LeBron James": {
+    "PlayerID": 2544,
+    "bio": "LeBron Raymone James Sr. is an American professional basketball player for the Los Angeles Lakers of the National Basketball Association. He is often regarded as the greatest basketball player of all time, which has resulted in frequent comparisons to Michael Jordan."
+  },
+  "Derrick Rose": {
+    "PlayerID": 201565,
+    "bio": "Derrick Martell Rose is an American professional basketball player for the Detroit Pistons of the National Basketball Association. He played one year of college basketball for the Memphis Tigers before being drafted first overall by his hometown Chicago Bulls in the 2008 NBA draft."
+  },
+  "Kawhi Leonard": {
+    "PlayerID": 202695,
+    "bio": "Kawhi Anthony Leonard is an American professional basketball player for the Los Angeles Clippers of the National Basketball Association. He played two seasons of college basketball for the San Diego State Aztecs and was named a consensus second-team All-American as a sophomore."
+  },
+  "Kevin Durant": {
+    "PlayerID": 201142,
+    "bio": "Kevin Wayne Durant is an American professional basketball player for the Brooklyn Nets of the National Basketball Association. He played one season of college basketball for the University of Texas, and was selected as the second overall pick by the Seattle SuperSonics in the 2007 NBA draft."
+  },
+  "Andre Iguodala": {
+    "PlayerID": 2738,
+    "bio": "Andre Tyler Iguodala is an American professional basketball player for the Miami Heat of the National Basketball Association. The swingman was an NBA All-Star in 2012 and has been named to the NBA All-Defensive Team twice."
+  },
+  "Stephen Curry": {
+    "PlayerID": 201939,
+    "bio": "Wardell Stephen \"Steph\" Curry II is an American professional basketball player for the Golden State Warriors of the National Basketball Association. A six-time NBA All-Star, Curry has been named the NBA Most Valuable Player twice and won three NBA championships with the Warriors."
+  },
+  "Russell Westbrook": {
+    "PlayerID": 201566,
+    "bio": "Russell Westbrook III is an American professional basketball player for the Houston Rockets of the National Basketball Association. He is a nine-time NBA All-Star and earned the NBA Most Valuable Player Award in the 2016–17 season."
+  },
+  "James Harden": {
+    "PlayerID": 201935,
+    "bio": "James Edward Harden Jr. is an American professional basketball player for the Houston Rockets of the National Basketball Association. He played college basketball for Arizona State, where he was named a consensus All-American and Pac-10 Player of the Year in 2009."
+  },
+  "Giannis Antetokounmpo": {
+    "PlayerID": 203507,
+    "bio": "Giannis Sina Ougko Antetokounmpo is a Greek professional basketball player for the Milwaukee Bucks of the National Basketball Association. Born in Greece to Nigerian parents, Antetokounmpo began playing basketball for the youth teams of Filathlitikos in Athens."
+  }
+}

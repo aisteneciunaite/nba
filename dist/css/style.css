@@ -1,0 +1,12 @@
+/* CSS kodas*/
+.h50px {
+  height: 70px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+.container {
+  min-height: 100vh;
+}
