@@ -1,144 +1,142 @@
-{
-  "nbaSeasons": [
-    {
-      "year": 2000,
-      "champion": "Los Angeles Lakers",
-      "runnerUp": "Indiana Pacers",
-      "finalsMVP": "Shaquille O'Neal",
-      "mvp": "Shaquille O'Neal"
-    },
-    {
-      "year": 2001,
-      "champion": "Los Angeles Lakers",
-      "runnerUp": "Philadelphia 76ers",
-      "finalsMVP": "Shaquille O'Neal",
-      "mvp": "Allen Iverson"
-    },
-    {
-      "year": 2002,
-      "champion": "Los Angeles Lakers",
-      "runnerUp": "New Jersey Nets",
-      "finalsMVP": "Shaquille O'Neal",
-      "mvp": "Tim Duncan"
-    },
-    {
-      "year": 2003,
-      "champion": "San Antonio Spurs",
-      "runnerUp": "New Jersey Nets",
-      "finalsMVP": "Tim Duncan",
-      "mvp": "Tim Duncan"
-    },
-    {
-      "year": 2004,
-      "champion": "Detroit Pistons",
-      "runnerUp": "Los Angeles Lakers",
-      "finalsMVP": "Chauncey Billups",
-      "mvp": "Kevin Garnett"
-    },
-    {
-      "year": 2005,
-      "champion": "San Antonio Spurs",
-      "runnerUp": "Detroit Pistons",
-      "finalsMVP": "Tim Duncan",
-      "mvp": "Steve Nash"
-    },
-    {
-      "year": 2006,
-      "champion": "Miami Heat",
-      "runnerUp": "Dallas Mavericks",
-      "finalsMVP": "Dwyane Wade",
-      "mvp": "Steve Nash"
-    },
-    {
-      "year": 2007,
-      "champion": "San Antonio Spurs",
-      "runnerUp": "Cleveland Cavaliers",
-      "finalsMVP": "Tony Parker",
-      "mvp": "Dirk Nowitzki"
-    },
-    {
-      "year": 2008,
-      "champion": "Boston Celtics",
-      "runnerUp": "Los Angeles Lakers",
-      "finalsMVP": "Paul Pierce",
-      "mvp": "Kobe Bryant"
-    },
-    {
-      "year": 2009,
-      "champion": "Los Angeles Lakers",
-      "runnerUp": "Orlando Magic",
-      "finalsMVP": "Kobe Bryant",
-      "mvp": "LeBron James"
-    },
-    {
-      "year": 2010,
-      "champion": "Los Angeles Lakers",
-      "runnerUp": "Boston Celtics",
-      "finalsMVP": "Kobe Bryant",
-      "mvp": "LeBron James"
-    },
-    {
-      "year": 2011,
-      "champion": "Dallas Mavericks",
-      "runnerUp": "Miami Heat",
-      "finalsMVP": "Dirk Nowitzki",
-      "mvp": "Derrick Rose"
-    },
-    {
-      "year": 2012,
-      "champion": "Miami Heat",
-      "runnerUp": "Oklahoma City Thunder",
-      "finalsMVP": "LeBron James",
-      "mvp": "LeBron James"
-    },
-    {
-      "year": 2013,
-      "champion": "Miami Heat",
-      "runnerUp": "San Antonio Spurs",
-      "finalsMVP": "LeBron James",
-      "mvp": "LeBron James"
-    },
-    {
-      "year": 2014,
-      "champion": "San Antonio Spurs",
-      "runnerUp": "Miami Heat",
-      "finalsMVP": "Kawhi Leonard",
-      "mvp": "Kevin Durant"
-    },
-    {
-      "year": 2015,
-      "champion": "Golden State Warriors",
-      "runnerUp": "Cleveland Cavaliers",
-      "finalsMVP": "Andre Iguodala",
-      "mvp": "Stephen Curry"
-    },
-    {
-      "year": 2016,
-      "champion": "Cleveland Cavaliers",
-      "runnerUp": "Golden State Warriors",
-      "finalsMVP": "LeBron James",
-      "mvp": "Stephen Curry"
-    },
-    {
-      "year": 2017,
-      "champion": "Golden State Warriors",
-      "runnerUp": "Cleveland Cavaliers",
-      "finalsMVP": "Kevin Durant",
-      "mvp": "Russell Westbrook"
-    },
-    {
-      "year": 2018,
-      "champion": "Golden State Warriors",
-      "runnerUp": "Cleveland Cavaliers",
-      "finalsMVP": "Kevin Durant",
-      "mvp": "James Harden"
-    },
-    {
-      "year": 2019,
-      "champion": "Toronto Raptors",
-      "runnerUp": "Golden State Warriors",
-      "finalsMVP": "Kawhi Leonard",
-      "mvp": "Giannis Antetokounmpo"
-    }
-  ]
-}
+[
+  {
+    "year": 2000,
+    "champion": "Los Angeles Lakers",
+    "runnerUp": "Indiana Pacers",
+    "finalsMVP": "Shaquille O'Neal",
+    "mvp": "Shaquille O'Neal"
+  },
+  {
+    "year": 2001,
+    "champion": "Los Angeles Lakers",
+    "runnerUp": "Philadelphia 76ers",
+    "finalsMVP": "Shaquille O'Neal",
+    "mvp": "Allen Iverson"
+  },
+  {
+    "year": 2002,
+    "champion": "Los Angeles Lakers",
+    "runnerUp": "New Jersey Nets",
+    "finalsMVP": "Shaquille O'Neal",
+    "mvp": "Tim Duncan"
+  },
+  {
+    "year": 2003,
+    "champion": "San Antonio Spurs",
+    "runnerUp": "New Jersey Nets",
+    "finalsMVP": "Tim Duncan",
+    "mvp": "Tim Duncan"
+  },
+  {
+    "year": 2004,
+    "champion": "Detroit Pistons",
+    "runnerUp": "Los Angeles Lakers",
+    "finalsMVP": "Chauncey Billups",
+    "mvp": "Kevin Garnett"
+  },
+  {
+    "year": 2005,
+    "champion": "San Antonio Spurs",
+    "runnerUp": "Detroit Pistons",
+    "finalsMVP": "Tim Duncan",
+    "mvp": "Steve Nash"
+  },
+  {
+    "year": 2006,
+    "champion": "Miami Heat",
+    "runnerUp": "Dallas Mavericks",
+    "finalsMVP": "Dwyane Wade",
+    "mvp": "Steve Nash"
+  },
+  {
+    "year": 2007,
+    "champion": "San Antonio Spurs",
+    "runnerUp": "Cleveland Cavaliers",
+    "finalsMVP": "Tony Parker",
+    "mvp": "Dirk Nowitzki"
+  },
+  {
+    "year": 2008,
+    "champion": "Boston Celtics",
+    "runnerUp": "Los Angeles Lakers",
+    "finalsMVP": "Paul Pierce",
+    "mvp": "Kobe Bryant"
+  },
+  {
+    "year": 2009,
+    "champion": "Los Angeles Lakers",
+    "runnerUp": "Orlando Magic",
+    "finalsMVP": "Kobe Bryant",
+    "mvp": "LeBron James"
+  },
+  {
+    "year": 2010,
+    "champion": "Los Angeles Lakers",
+    "runnerUp": "Boston Celtics",
+    "finalsMVP": "Kobe Bryant",
+    "mvp": "LeBron James"
+  },
+  {
+    "year": 2011,
+    "champion": "Dallas Mavericks",
+    "runnerUp": "Miami Heat",
+    "finalsMVP": "Dirk Nowitzki",
+    "mvp": "Derrick Rose"
+  },
+  {
+    "year": 2012,
+    "champion": "Miami Heat",
+    "runnerUp": "Oklahoma City Thunder",
+    "finalsMVP": "LeBron James",
+    "mvp": "LeBron James"
+  },
+  {
+    "year": 2013,
+    "champion": "Miami Heat",
+    "runnerUp": "San Antonio Spurs",
+    "finalsMVP": "LeBron James",
+    "mvp": "LeBron James"
+  },
+  {
+    "year": 2014,
+    "champion": "San Antonio Spurs",
+    "runnerUp": "Miami Heat",
+    "finalsMVP": "Kawhi Leonard",
+    "mvp": "Kevin Durant"
+  },
+  {
+    "year": 2015,
+    "champion": "Golden State Warriors",
+    "runnerUp": "Cleveland Cavaliers",
+    "finalsMVP": "Andre Iguodala",
+    "mvp": "Stephen Curry"
+  },
+  {
+    "year": 2016,
+    "champion": "Cleveland Cavaliers",
+    "runnerUp": "Golden State Warriors",
+    "finalsMVP": "LeBron James",
+    "mvp": "Stephen Curry"
+  },
+  {
+    "year": 2017,
+    "champion": "Golden State Warriors",
+    "runnerUp": "Cleveland Cavaliers",
+    "finalsMVP": "Kevin Durant",
+    "mvp": "Russell Westbrook"
+  },
+  {
+    "year": 2018,
+    "champion": "Golden State Warriors",
+    "runnerUp": "Cleveland Cavaliers",
+    "finalsMVP": "Kevin Durant",
+    "mvp": "James Harden"
+  },
+  {
+    "year": 2019,
+    "champion": "Toronto Raptors",
+    "runnerUp": "Golden State Warriors",
+    "finalsMVP": "Kawhi Leonard",
+    "mvp": "Giannis Antetokounmpo"
+  }
+]

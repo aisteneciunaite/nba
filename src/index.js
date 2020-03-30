@@ -26,7 +26,7 @@ const buttons = document.querySelectorAll('button.btn.btn-info');
 const clearFiltersButton = document.querySelector('#btn-clear');
 const yearSelector = document.querySelector('#yearSelector');
 const pageContent = document.querySelector('#pageContent');
-const paceTitle = document.querySelector('#title');
+const pageTitle = document.querySelector('#title');
 const headshotFallback =
   'https://stats.nba.com/media/img/league/nba-headshot-fallback.png';
 const lorem =
@@ -36,37 +36,37 @@ const lorem =
 //set up players object
 let players;
 function getPlayerData() {
-  let xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
+  let xhr = new XMLHttpRequest();
+  xhr.onload = function() {
+    if (this.status == 200) {
       players = JSON.parse(this.responseText);
     }
   };
-  xhttp.open('GET', '../src/players.json', true);
-  xhttp.send();
+  xhr.open('GET', '../src/players.json', true);
+  xhr.send();
 }
 getPlayerData();
 //set up teams object
 let teams;
 function getTeamData() {
-  let xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
+  let xhr = new XMLHttpRequest();
+  xhr.onload = function() {
+    if (this.status == 200) {
       teams = JSON.parse(this.responseText);
     }
   };
-  xhttp.open('GET', '../src/teams.json', true);
-  xhttp.send();
+  xhr.open('GET', '../src/teams.json', true);
+  xhr.send();
 }
 getTeamData();
 //set up seasons object
 let seasonsObj;
 function getSeasonData() {
   let nbaSeasons;
-  let xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      nbaSeasons = JSON.parse(this.responseText).nbaSeasons;
+  let xhr = new XMLHttpRequest();
+  xhr.onload = function() {
+    if (this.status == 200) {
+      nbaSeasons = JSON.parse(this.responseText);
       seasonsObj = nbaSeasons.reduce((acc, curr) => {
         acc[curr.year] = curr;
         return acc;
@@ -75,8 +75,8 @@ function getSeasonData() {
       populatePage();
     }
   };
-  xhttp.open('GET', '../src/seasons.json', true);
-  xhttp.send();
+  xhr.open('GET', '../src/seasons.json', true);
+  xhr.send();
 }
 getSeasonData();
 
@@ -115,7 +115,7 @@ function getDetailText(detail) {
 //POPULATE DODUMENT FUNCTIONS
 // populate Year dropdown
 let createSeasonsOptions = () => {
-  let seasons = Object.keys(seasonsObj).sort((a, b) => b - a);
+  let seasons = Object.keys(seasonsObj).reverse();
 
   seasons.forEach(season => {
     let option = document.createElement('option');
@@ -126,7 +126,7 @@ let createSeasonsOptions = () => {
 };
 // main function to populate page content
 let populatePage = (
-  years = Object.keys(seasonsObj).sort((a, b) => b - a),
+  years = Object.keys(seasonsObj).reverse(),
   details = ['champion', 'runnerUp', 'finalsMVP', 'mvp']
 ) => {
   if (typeof years === 'object' && typeof details === 'object') {
@@ -142,7 +142,7 @@ let populatePage = (
 // sub function to populate page with a table
 let createTable = (years, details) => {
   pageContent.innerHTML = '';
-  paceTitle.innerText = `All seasons results`;
+  pageTitle.innerText = `All seasons results`;
   let table = document.createElement('table');
   table.classList.add('table', 'table-hover');
   table.innerHTML = '<thead></thead><tbody></tbody>';
@@ -174,7 +174,7 @@ let createTable = (years, details) => {
 // sub function to populate page with a grid
 let createGrid = (year, details) => {
   pageContent.innerHTML = '';
-  paceTitle.innerText = `${year} season results`;
+  pageTitle.innerText = `${year} season results`;
   let cardGrid = document.createElement('div');
   cardGrid.setAttribute('class', 'row row-cols-1 row-cols-md-2');
   pageContent.appendChild(cardGrid);
@@ -217,7 +217,7 @@ let createGrid = (year, details) => {
 // sub function to populate page with a profile
 let createProfile = (year, detail) => {
   pageContent.innerHTML = '';
-  paceTitle.innerText = `${year} season ${getDetailText(detail)}:`;
+  pageTitle.innerText = `${year} season ${getDetailText(detail)}:`;
   let name = seasonsObj[year][detail];
 
   let profileContainer = document.createElement('div');
@@ -246,7 +246,7 @@ let createProfile = (year, detail) => {
 // sub function to populate page with a list
 let createList = (years, detail) => {
   pageContent.innerHTML = '';
-  paceTitle.innerText = `All seasons ${getDetailText(detail)}s`;
+  pageTitle.innerText = `All seasons ${getDetailText(detail)}s`;
   let ul = document.createElement('ul');
   ul.classList.add('p-0');
   pageContent.appendChild(ul);
@@ -277,11 +277,12 @@ let createList = (years, detail) => {
     mediaBody.appendChild(text);
 
     ul.appendChild(li);
-    // li.innerText = `${year}: ${name}`;
   });
 };
 
 //EVENT LISTENERS
+document.onload();
+
 yearSelector.addEventListener('change', function() {
   let activeButton = document.querySelector('button.active');
   let years = yearSelector.value ? yearSelector.value : undefined;
