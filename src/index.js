@@ -35,48 +35,30 @@ const lorem =
 //SET UP DATA OBJECTS
 //set up players object
 let players;
-function getPlayerData() {
-  let xhr = new XMLHttpRequest();
-  xhr.onload = function() {
-    if (this.status == 200) {
-      players = JSON.parse(this.responseText);
-    }
-  };
-  xhr.open('GET', '../src/players.json', true);
-  xhr.send();
+async function getPlayerData() {
+  let res = await fetch('../src/players.json');
+  players = await res.json();
 }
 getPlayerData();
+
 //set up teams object
 let teams;
-function getTeamData() {
-  let xhr = new XMLHttpRequest();
-  xhr.onload = function() {
-    if (this.status == 200) {
-      teams = JSON.parse(this.responseText);
-    }
-  };
-  xhr.open('GET', '../src/teams.json', true);
-  xhr.send();
+async function getTeamData() {
+  let res = await fetch('../src/teams.json');
+  teams = await res.json();
 }
 getTeamData();
 //set up seasons object
 let seasonsObj;
-function getSeasonData() {
-  let nbaSeasons;
-  let xhr = new XMLHttpRequest();
-  xhr.onload = function() {
-    if (this.status == 200) {
-      nbaSeasons = JSON.parse(this.responseText);
-      seasonsObj = nbaSeasons.reduce((acc, curr) => {
-        acc[curr.year] = curr;
-        return acc;
-      }, {});
-      createSeasonsOptions();
-      populatePage();
-    }
-  };
-  xhr.open('GET', '../src/seasons.json', true);
-  xhr.send();
+async function getSeasonData() {
+  let res = await fetch('../src/seasons.json');
+  let nbaSeasons = await res.json();
+  seasonsObj = await nbaSeasons.reduce((acc, curr) => {
+    acc[curr.year] = curr;
+    return acc;
+  }, {});
+  createSeasonsOptions();
+  populatePage();
 }
 getSeasonData();
 
@@ -112,12 +94,12 @@ function getDetailText(detail) {
   }
 }
 
-//POPULATE DODUMENT FUNCTIONS
+//POPULATE DOCUMENT FUNCTIONS
 // populate Year dropdown
 let createSeasonsOptions = () => {
   let seasons = Object.keys(seasonsObj).reverse();
 
-  seasons.forEach(season => {
+  seasons.forEach((season) => {
     let option = document.createElement('option');
     option.innerText = season;
     option.setAttribute('value', season);
@@ -153,18 +135,18 @@ let createTable = (years, details) => {
   trHead.innerHTML = '<th scope="col">Seasons</th>';
   tableHead.appendChild(trHead);
   //populate table head
-  details.forEach(detail => {
+  details.forEach((detail) => {
     let th = document.createElement('th');
     th.innerText = getDetailText(detail);
     th.setAttribute('scope', 'col');
     trHead.appendChild(th);
   });
   // populate table body
-  years.forEach(year => {
+  years.forEach((year) => {
     let tr = document.createElement('tr');
     tr.innerHTML = `<th scope="row">${year}</th>`;
     tableBody.appendChild(tr);
-    details.forEach(detail => {
+    details.forEach((detail) => {
       let td = document.createElement('td');
       td.innerText = seasonsObj[year][detail];
       tr.appendChild(td);
@@ -178,7 +160,7 @@ let createGrid = (year, details) => {
   let cardGrid = document.createElement('div');
   cardGrid.setAttribute('class', 'row row-cols-1 row-cols-md-2');
   pageContent.appendChild(cardGrid);
-  details.forEach(detail => {
+  details.forEach((detail) => {
     let name = seasonsObj[year][detail];
     let cardColumn = document.createElement('div');
     cardColumn.setAttribute('class', 'col mb-4');
@@ -251,7 +233,7 @@ let createList = (years, detail) => {
   ul.classList.add('p-0');
   pageContent.appendChild(ul);
 
-  years.forEach(year => {
+  years.forEach((year) => {
     let name = seasonsObj[year][detail];
     let li = document.createElement('li');
     li.classList.add('media', 'border', 'p-3', 'd-flex', 'align-items-center');
@@ -281,9 +263,8 @@ let createList = (years, detail) => {
 };
 
 //EVENT LISTENERS
-document.onload();
 
-yearSelector.addEventListener('change', function() {
+yearSelector.addEventListener('change', function () {
   let activeButton = document.querySelector('button.active');
   let years = yearSelector.value ? yearSelector.value : undefined;
   let details = activeButton
@@ -292,10 +273,10 @@ yearSelector.addEventListener('change', function() {
   populatePage(years, details);
 });
 
-buttons.forEach(button => {
-  button.addEventListener('click', function() {
+buttons.forEach((button) => {
+  button.addEventListener('click', function () {
     //reset active state on all buttons
-    buttons.forEach(btn => {
+    buttons.forEach((btn) => {
       btn.classList.remove('active');
     });
 
@@ -309,8 +290,8 @@ buttons.forEach(button => {
   });
 });
 
-clearFiltersButton.addEventListener('click', function() {
-  buttons.forEach(button => {
+clearFiltersButton.addEventListener('click', function () {
+  buttons.forEach((button) => {
     button.classList.remove('active');
   });
   let years = yearSelector.value ? yearSelector.value : undefined;
