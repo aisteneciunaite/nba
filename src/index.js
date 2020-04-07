@@ -18,17 +18,13 @@
  *       - Informacija turės būti pateikima su tekstu ir nuotrauka (pvz. žaidėjo nuotrauka
  *       ar komandos nuotrauka su trofėjumi).
  */
-
-// Pastarūjų 20 metų NBA sezono svarbiausia informacija (iš čia reikės imti informaciją)
-
 import _ from 'lodash';
 const buttons = document.querySelectorAll('button.btn.btn-info');
 const clearFiltersButton = document.querySelector('#btn-clear');
 const yearSelector = document.querySelector('#yearSelector');
 const pageContent = document.querySelector('#pageContent');
 const pageTitle = document.querySelector('#title');
-const headshotFallback =
-  'https://stats.nba.com/media/img/league/nba-headshot-fallback.png';
+const headshotFallback = 'https://stats.nba.com/media/img/league/nba-headshot-fallback.png';
 const lorem =
   'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi dolores amet ab in velit ipsa asperiores aspernatur! Autem eaque quis eum, optio rem expedita, ducimus unde incidunt quod voluptas architecto!';
 
@@ -53,7 +49,7 @@ let seasonsObj;
 async function getSeasonData() {
   let res = await fetch('../src/seasons.json');
   let nbaSeasons = await res.json();
-  seasonsObj = await nbaSeasons.reduce((acc, curr) => {
+  seasonsObj = nbaSeasons.reduce((acc, curr) => {
     acc[curr.year] = curr;
     return acc;
   }, {});
@@ -123,36 +119,42 @@ let populatePage = (
 };
 // sub function to populate page with a table
 let createTable = (years, details) => {
-  pageContent.innerHTML = '';
+  //set up table structure
+  pageContent.innerHTML = `<table class="table table-hover">
+                            <thead>
+                              <tr>
+                                <th scope="col">Seasons</th>
+                              </tr>
+                            </thead>
+                            <tbody></tbody>
+                          <table>`;
   pageTitle.innerText = `All seasons results`;
-  let table = document.createElement('table');
-  table.classList.add('table', 'table-hover');
-  table.innerHTML = '<thead></thead><tbody></tbody>';
-  pageContent.appendChild(table);
+
+  let table = pageContent.firstElementChild;
   let tableHead = table.firstElementChild;
   let tableBody = table.lastElementChild;
-  let trHead = document.createElement('tr');
-  trHead.innerHTML = '<th scope="col">Seasons</th>';
-  tableHead.appendChild(trHead);
-  //populate table head
+  let trHead = tableHead.firstElementChild;
+
+  //  create table headers
   details.forEach((detail) => {
-    let th = document.createElement('th');
-    th.innerText = getDetailText(detail);
-    th.setAttribute('scope', 'col');
-    trHead.appendChild(th);
+    trHead.innerHTML += `<th scope="col">${getDetailText(detail)}</th>`;
   });
+
   // populate table body
   years.forEach((year) => {
     let tr = document.createElement('tr');
-    tr.innerHTML = `<th scope="row">${year}</th>`;
-    tableBody.appendChild(tr);
+
+    let output = `<th scope="row">${year}</th>`;
+
     details.forEach((detail) => {
-      let td = document.createElement('td');
-      td.innerText = seasonsObj[year][detail];
-      tr.appendChild(td);
+      output += `<td>${seasonsObj[year][detail]}</td>`;
     });
+
+    tr.innerHTML = output;
+    tableBody.appendChild(tr);
   });
 };
+
 // sub function to populate page with a grid
 let createGrid = (year, details) => {
   pageContent.innerHTML = '';
@@ -160,105 +162,58 @@ let createGrid = (year, details) => {
   let cardGrid = document.createElement('div');
   cardGrid.setAttribute('class', 'row row-cols-1 row-cols-md-2');
   pageContent.appendChild(cardGrid);
+
   details.forEach((detail) => {
     let name = seasonsObj[year][detail];
-    let cardColumn = document.createElement('div');
-    cardColumn.setAttribute('class', 'col mb-4');
-    let card = document.createElement('div');
-    card.classList.add('card');
-    cardGrid.appendChild(cardColumn);
-    cardColumn.append(card);
-
-    let cardHeader = document.createElement('h5');
-    cardHeader.classList.add('card-header');
-    cardHeader.innerText = getDetailText(detail);
-    card.appendChild(cardHeader);
-
-    let imageContainer = document.createElement('div');
-    imageContainer.setAttribute('class', 'd-flex justify-content-center');
-    let image = document.createElement('img');
-    let imageContent = getImage(detail, name);
-    image.setAttribute('src', imageContent);
-    imageContainer.appendChild(image);
-    card.appendChild(imageContainer);
-
-    let cardBody = document.createElement('div');
-    cardBody.classList.add('card-body');
-    card.appendChild(cardBody);
-
-    let cardTitle = document.createElement('h5');
-    cardTitle.classList.add('card-title');
-    cardTitle.innerText = name;
-    cardBody.appendChild(cardTitle);
-
-    let description = document.createElement('p');
-    description.innerText = getBio(detail, name);
-    cardBody.appendChild(description);
+    let newCard = `<div class="col mb-4">
+                    <div class="card">
+                      <h5 class="card-header">${getDetailText(detail)}</h5>
+                      <div class="d-flex justify-content-center">
+                        <img 
+                        src="${getImage(detail, name)}" 
+                        onerror="this.onerror=null; this.src='${headshotFallback}';">
+                      </div>
+                      <div class="card-body">
+                        <h5>${name}</h5>
+                        <p>${getBio(detail, name)}</p>
+                      </div>
+                    </div>
+                  </div>`;
+    cardGrid.innerHTML += newCard;
   });
 };
 // sub function to populate page with a profile
 let createProfile = (year, detail) => {
-  pageContent.innerHTML = '';
   pageTitle.innerText = `${year} season ${getDetailText(detail)}:`;
   let name = seasonsObj[year][detail];
-
-  let profileContainer = document.createElement('div');
-  pageContent.appendChild(profileContainer);
-
-  let profileHeading = document.createElement('h3');
-  profileHeading.innerText = name;
-  profileContainer.appendChild(profileHeading);
-
-  let profileImage = document.createElement('img');
-  profileImage.src = getImage(detail, name);
-  profileContainer.appendChild(profileImage);
-
-  let par1 = document.createElement('p');
-  par1.innerText = getBio(detail, name);
-  profileContainer.appendChild(par1);
-
-  let par2 = document.createElement('p');
-  par2.innerText = lorem;
-  profileContainer.appendChild(par2);
-
-  let par3 = document.createElement('p');
-  par3.innerText = lorem;
-  profileContainer.appendChild(par3);
+  pageContent.innerHTML = `<div>
+                            <h3>${name}</h3>
+                            <img src="${getImage(detail, name)}">
+                            <p>${getBio(detail, name)}</p>
+                            <p>${lorem}</p>
+                            <p>${lorem}</p>
+                          <div>`;
 };
 // sub function to populate page with a list
 let createList = (years, detail) => {
-  pageContent.innerHTML = '';
   pageTitle.innerText = `All seasons ${getDetailText(detail)}s`;
-  let ul = document.createElement('ul');
-  ul.classList.add('p-0');
-  pageContent.appendChild(ul);
+  pageContent.innerHTML = '<ul class="p-0"></ul>';
+  let ul = pageContent.firstElementChild;
 
   years.forEach((year) => {
     let name = seasonsObj[year][detail];
-    let li = document.createElement('li');
-    li.classList.add('media', 'border', 'p-3', 'd-flex', 'align-items-center');
+    let newLi = `<li class="media border p-3 d-flex align-items-center">
+                    <img
+                      src="${getImage(detail, name)}"
+                      class="mr-3 h50px" onerror="this.onerror=null; this.src='${headshotFallback}';"
+                    >
+                    <div class="media-body">
+                      <h5 class="mt-0 mb-1">${year} ${getDetailText(detail)}: ${name}</h5>
+                      <p>${getBio(detail, name)}</p>
+                    </div>
+                </li>`;
 
-    let img = document.createElement('img');
-    img.classList.add('mr-3', 'h50px');
-    img.setAttribute('src', getImage(detail, name));
-    img.setAttribute(
-      'onError',
-      `this.onerror=null; this.src='${headshotFallback}';`
-    );
-    li.appendChild(img);
-
-    let mediaBody = document.createElement('div');
-    mediaBody.classList.add('media-body');
-    li.appendChild(mediaBody);
-
-    let h5 = document.createElement('h5');
-    h5.classList.add('mt-0', 'mb-1');
-    h5.innerText = `${year} ${getDetailText(detail)}: ${name}`;
-    mediaBody.appendChild(h5);
-    let text = document.createTextNode(getBio(detail, name));
-    mediaBody.appendChild(text);
-
-    ul.appendChild(li);
+    ul.innerHTML += newLi;
   });
 };
 
@@ -267,9 +222,7 @@ let createList = (years, detail) => {
 yearSelector.addEventListener('change', function () {
   let activeButton = document.querySelector('button.active');
   let years = yearSelector.value ? yearSelector.value : undefined;
-  let details = activeButton
-    ? activeButton.getAttribute('data-details')
-    : undefined;
+  let details = activeButton ? activeButton.getAttribute('data-details') : undefined;
   populatePage(years, details);
 });
 
